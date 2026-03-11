@@ -24,9 +24,6 @@ A lightweight serialization library for **Starlet** projects to handle both data
   - Whitespace handling: `skipWhitespace`, `skipToNextLine`, `trimEOL`
   - Error-safe macros: `STARLET_PARSE_OR`, `STARLET_PARSE_STRING_OR`
 
-<br/>
-
-
 ## Prerequisites
 - C++20 or later
 - CMake 3.20+
@@ -60,9 +57,6 @@ cmake -B build
 cmake --build build
 ```
 
-<br/>
-
-
 ## Testing
 ```bash
 # Configure with tests enabled
@@ -72,9 +66,6 @@ cmake -B build -DBUILD_TESTS=ON
 cmake --build build
 ctest --test-dir build --output-on-failure
 ```
-
-<br/>
-
 
 ## License
 MIT License - see [LICENSE](./LICENSE) for details.
