@@ -48,21 +48,15 @@ target_link_libraries(app_name PRIVATE starlet_serializer)
 
 ### Building from Source
 ```bash
-# Clone the repository
 git clone https://github.com/starlet-engine/serializer.git
 cd serializer
-
-# Configure and build
 cmake -B build
 cmake --build build
 ```
 
 ## Testing
 ```bash
-# Configure with tests enabled
 cmake -B build -DBUILD_TESTS=ON
-
-# Build and run tests
 cmake --build build
 ctest --test-dir build --output-on-failure
 ```
