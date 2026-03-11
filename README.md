@@ -25,8 +25,11 @@ A lightweight serialization library for **Starlet** projects to handle both data
   - Error-safe macros: `STARLET_PARSE_OR`, `STARLET_PARSE_STRING_OR`
 
 ## Prerequisites
+
 - C++20 or later
-- CMake 3.20+
+- One of the following Build Systems,
+    - CMake 3.20+
+    - Meson 1.1+
 - **Dependencies**: 
   - [starlet-math](https://github.com/starlet-engine/math) (auto-fetched)
   - [starlet-logger](https://github.com/starlet-engine/logger) (auto-fetched)
@@ -34,6 +37,8 @@ A lightweight serialization library for **Starlet** projects to handle both data
 ## Installation
 
 ### Using as a Dependency
+
+#### CMake
 ```cmake
 include(FetchContent)
 
@@ -46,19 +51,35 @@ FetchContent_MakeAvailable(starlet_serializer)
 target_link_libraries(app_name PRIVATE starlet_serializer)
 ```
 
-### Building from Source
+#### Meson
+> **Note:** Meson does not fetch dependencies automatically. Add the [`starlet_serializer.wrap`](./subprojects/starlet_serializer.wrap) file to your project's `subprojects` directory.
+
+In your `meson.build`:
+
+```python
+starlet_serializer = subproject('starlet_serializer')
+starlet_serializer_dep = starlet_serializer.get_variable('starlet_serializer_dep')
+executable('app_name', 'main.cpp', dependencies: starlet_serializer_dep)
+```
+
+### Building and Testing
 ```bash
 git clone https://github.com/starlet-engine/serializer.git
 cd serializer
-cmake -B build
-cmake --build build
 ```
 
-## Testing
+#### CMake
 ```bash
 cmake -B build -DBUILD_TESTS=ON
 cmake --build build
-ctest --test-dir build --output-on-failure
+ctest --test-dir build
+```
+
+#### Meson
+```bash
+meson setup build -Dbuild_tests=true
+meson compile -C build
+meson test -C build
 ```
 
 ## License

@@ -12,13 +12,13 @@ if(NOT TARGET ${PROJECT_NAME})
 
     if(NOT TARGET starlet_math)
       FetchContent_Declare(starlet_math
-        GIT_REPOSITORY https://github.com/masonlet/starlet-math.git
+        GIT_REPOSITORY https://github.com/starlet-engine/math.git
         GIT_TAG main
       )
     endif()
     if(NOT TARGET starlet_logger)
       FetchContent_Declare(starlet_logger
-        GIT_REPOSITORY https://github.com/masonlet/starlet-logger.git 
+        GIT_REPOSITORY https://github.com/starlet-engine/logger.git 
         GIT_TAG main
       )
 
