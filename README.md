@@ -7,6 +7,7 @@
 A lightweight serialization library for **Starlet** projects to handle both data reading and writing.
 
 ## Features
+
 ### File Format Support
 - **Images**:
   - BMP (24-bit)
@@ -24,17 +25,17 @@ A lightweight serialization library for **Starlet** projects to handle both data
   - Whitespace handling: `skipWhitespace`, `skipToNextLine`, `trimEOL`
   - Error-safe macros: `STARLET_PARSE_OR`, `STARLET_PARSE_STRING_OR`
 
-## Prerequisites
-
-- C++20 or later
-- One of the following Build Systems,
-    - CMake 3.20+
-    - Meson 1.1+
-- **Dependencies**: 
+## Dependencies
   - [starlet-math](https://github.com/starlet-engine/math) (auto-fetched)
   - [starlet-logger](https://github.com/starlet-engine/logger) (auto-fetched)
 
 ## Installation
+
+### Prerequisites
+- C++20 or later
+- One of the following Build Systems,
+    - CMake 3.20+
+    - Meson 1.1+
 
 ### Using as a Dependency
 
